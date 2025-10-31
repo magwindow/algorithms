@@ -20,3 +20,17 @@ def binarysearch(sorted_cabinet,looking_for):
 sortedcabinet = [1,2,3,4,5,6,7,8,9,10]
 
 print(binarysearch(sortedcabinet,8))
+
+
+
+def inverse_sin(number):
+    """
+    Находит позиции числа, синус которого равен заданному числу, 
+    и возвращает значение предметной области с заданным индексом
+   """
+    domain = [x * math.pi/10000 - math.pi/2 for x in list(range(0,10000))]
+    the_range = [math.sin(x) for x in domain]
+    result = domain[binarysearch(the_range,number)]
+    return result
+
+print(inverse_sin(0.9))
