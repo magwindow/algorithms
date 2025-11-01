@@ -52,4 +52,14 @@ def selection_sort(arr):
         new_arr.append(arr.pop(smallest))
     return new_arr
 
-print(selection_sort([5,3,6,2,10]))
+# print(selection_sort([5,3,6,2,10]))
+# print(find_smallest([5,3,6,2,10]))
+
+def max_num(arr):
+    """Рекурсивный поиск максимального элемента в списке"""
+    if len(arr) == 2:
+        return arr[0] if arr[0] > arr[1] else arr[1]
+    return arr[0] if arr[0] > max_num(arr[1:]) else max_num(arr[1:])
+
+# print(max_num([5,3,25,2,10]))
+    
