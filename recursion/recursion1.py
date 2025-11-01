@@ -41,5 +41,5 @@ def count_array(arr):
     else:
         return 1 + count_array(arr[1:])
     
-print(count_array([1, 2, 3, 4, 5, 'a']))
+# print(count_array([1, 2, 3, 4, 5, 'a']))
     

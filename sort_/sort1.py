@@ -62,4 +62,20 @@ def max_num(arr):
     return arr[0] if arr[0] > max_num(arr[1:]) else max_num(arr[1:])
 
 # print(max_num([5,3,25,2,10]))
+
+def quicksort(arr):
+    """Быстрая сортировка"""
+    # Базовый случай: 
+    # массивы с 0 и 1 элементами уже отсортированы
+    if len(arr) < 2:
+        return arr
+    # Рекурсивный случай
+    else:
+        # Подмассив всех элементов меньше опорного
+        less = [i for i in arr[1:] if i <= arr[0]]
+        # Подмассив всех элементов больше опорного
+        greater = [i for i in arr[1:] if i > arr[0]]
+        return quicksort(less) + [arr[0]] + quicksort(greater)
+    
+# print(quicksort([5,3,25,2,10]))
     
