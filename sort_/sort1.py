@@ -1,5 +1,3 @@
-
-
 def insert_cabinet(cabinet, to_insert):
     """Вставка папки с заданным номером на полку"""
     check_location = len(cabinet) - 1
@@ -26,6 +24,32 @@ def insertion_sort(cabinet):
     return newcabinet
 
 
-cabinet = [8,4,6,1,2,5,3,7]
-sortedcabinet = insertion_sort(cabinet)
-print(insertion_sort(sortedcabinet))
+# cabinet = [8,4,6,1,2,5,3,7]
+# sortedcabinet = insertion_sort(cabinet)
+# print(insertion_sort(sortedcabinet))
+
+
+def find_smallest(arr):
+    """Поиск наименьшего элемента в списке"""
+    # Для хранения наименьшего значения
+    smallest = arr[0]
+    # Для хранения индекса наименьшего значения
+    smallest_index = 0
+    for i in range(1, len(arr)):
+        if arr[i] < smallest:
+            smallest = arr[i]
+            smallest_index = i
+    return smallest_index
+
+
+def selection_sort(arr):
+    """Сортировка выбором"""
+    new_arr = []
+    for i in range(len(arr)):
+        # Находит наименьший элемент в списке
+        # и добавляет его в новый список
+        smallest = find_smallest(arr)
+        new_arr.append(arr.pop(smallest))
+    return new_arr
+
+print(selection_sort([5,3,6,2,10]))
